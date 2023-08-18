@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:5000")
 @Controller
 @ResponseStatus(HttpStatus.MOVED_PERMANENTLY)
 public class HomeController {

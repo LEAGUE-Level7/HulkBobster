@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:5000")
 @RestController
 public class LocController {
 
