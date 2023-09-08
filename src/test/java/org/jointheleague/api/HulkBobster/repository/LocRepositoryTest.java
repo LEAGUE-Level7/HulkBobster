@@ -3,6 +3,7 @@ package org.jointheleague.api.HulkBobster.repository;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import org.jointheleague.api.HulkBobster.repository.dto.LocResponse;
 import org.jointheleague.api.HulkBobster.repository.dto.Recipe;
+import org.jointheleague.api.HulkBobster.repository.dto.Result;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -77,7 +78,7 @@ class LocRepositoryTest {
                 .thenReturn(locResponse);
 
         //when
-        Recipe[] actualLocResults = locRepository.getResults(query);
+        Result[] actualLocResults = locRepository.getResults(query);
 
         //then
         assertEquals(expectedResults, actualLocResults);

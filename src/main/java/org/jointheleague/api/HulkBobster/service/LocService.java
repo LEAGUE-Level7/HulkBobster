@@ -1,7 +1,8 @@
 package org.jointheleague.api.HulkBobster.service;
 
 import org.jointheleague.api.HulkBobster.repository.LocRepository;
-import org.jointheleague.api.HulkBobster.repository.dto.Recipe;
+import org.jointheleague.api.HulkBobster.repository.dto.Result;
+import org.jointheleague.api.HulkBobster.repository.dto.Result;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class LocService {
         this.locRepository = locRepository;
     }
 
-    public Recipe[] getResults(String query){
+    public Result[] getResults(String query){
         return locRepository.getResults(query);
     }
 

@@ -2,19 +2,6 @@ package org.jointheleague.api.HulkBobster.presentation;
 
 import org.jointheleague.Recipes.UsedIngredient;
 import org.jointheleague.api.HulkBobster.repository.dto.Recipe;
-import org.jointheleague.api.HulkBobster.repository.dto.UsedIngredient;
-import org.jointheleague.api.HulkBobster.service.LocService;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.web.server.ResponseStatusException;
-import org.jointheleague.api.HulkBobster.presentation.LocController;
-
-import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
 /*
 class LocControllerTest {
     private LocController locController;

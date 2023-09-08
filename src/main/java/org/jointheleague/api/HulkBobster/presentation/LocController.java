@@ -6,7 +6,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.jointheleague.api.HulkBobster.repository.dto.LocResponse;
-import org.jointheleague.api.HulkBobster.repository.dto.Recipe;
+import org.jointheleague.api.HulkBobster.repository.dto.Result;
+import org.jointheleague.api.HulkBobster.repository.dto.Result;
 import org.jointheleague.api.HulkBobster.service.LocService;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.CollectionUtils;
@@ -29,12 +30,12 @@ public class LocController {
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Result(s) found",
             content = {@Content (mediaType = "application/json",
-            schema = @Schema(implementation = Recipe.class))}),
+            schema = @Schema(implementation = Result.class))}),
             @ApiResponse(responseCode = "404", description = "Result(s) not found")
 
     })
-    public Recipe[] getResults(@RequestParam(value="q") String query){
-        Recipe[] results = locService.getResults(query);
+    public Result[] getResults(@RequestParam(value="q") String query){
+        Result[] results = locService.getResults(query);
         if(results == null || results.length == 0 ){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Result(s) not found.");
         }
