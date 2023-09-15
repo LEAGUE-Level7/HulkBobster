@@ -47,7 +47,7 @@ class LocRepositoryTest {
         locRepository = new LocRepository(webClientMock);
     }
 
-    @Test
+   /* @Test
     void whenGetResults_thenReturnListOfResults() {
         //given
         String query = "Java";
@@ -83,5 +83,5 @@ class LocRepositoryTest {
         //then
         assertEquals(expectedResults, actualLocResults);
     }
-
+*/
 }

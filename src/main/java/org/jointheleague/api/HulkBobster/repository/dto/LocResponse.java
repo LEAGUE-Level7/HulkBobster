@@ -3,17 +3,18 @@ package org.jointheleague.api.HulkBobster.repository.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 public class LocResponse {
 
-    private Result[] results = null;
-//SWITCH EVERYTHING TO ARRAYLISTS WELL JUST LISTS BUT DO IT
+    private List<Result> results = null;
     @JsonProperty("recipes")
-    public Result[] getResults() {
+    public List<Result> getResults() {
         return results;
     }
 
     @JsonProperty("recipes")
-    public void setRecipes(Result[] results) {
+    public void setRecipes(List<Result> results) {
         this.results = results;
     }
 

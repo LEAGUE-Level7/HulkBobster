@@ -15,7 +15,7 @@ public class LocService {
         this.locRepository = locRepository;
     }
 
-    public Result[] getResults(String query){
+    public List<Result> getResults(String query){
         return locRepository.getResults(query);
     }
 

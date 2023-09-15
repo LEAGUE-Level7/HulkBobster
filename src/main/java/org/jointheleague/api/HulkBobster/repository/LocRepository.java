@@ -6,6 +6,8 @@ import org.jointheleague.api.HulkBobster.repository.dto.Result;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.List;
+
 @Repository
 public class LocRepository {
 
@@ -22,14 +24,18 @@ public class LocRepository {
         this.webClient = webClientMock;
     }
 
-    public Result[] getResults(String query) {
+    public List<Result> getResults(String query) {
+        System.out.println("Query = " + query);
         return webClient.get()
-                .uri(uriBuilder -> uriBuilder
-                       // .queryParam("fo", "json")
-                      //  .queryParam("at", "results")
-                      //  .queryParam("q", query)
-                        .path(query)
-                        .build()
+                .uri(uriBuilder -> {
+                    System.out.println(uriBuilder
+                            // .queryParam("fo", "json")
+                            //  .queryParam("at", "results")
+                            //  .queryParam("q", query)
+                            .path(query)
+                            .build().toASCIIString());
+                    return uriBuilder.path(query).build();
+                        }
                 ).retrieve()
                 .bodyToMono(LocResponse.class)
                 .block()
